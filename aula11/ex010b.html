@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validando Naturalidade</title>
+</head>
+<body>
+    <h1> Área de Validação</h1>
+    Qual país você nasceu? <input type="text" name="txtpais" id="txtpais"> 
+    <input type="button" value="Validar" onclick="validar()">
+    <div id="res"></div>
+
+    <script>
+        var txtv = document.querySelector('input#txtpais')
+        var res = document.querySelector('div#res')
+        var pais = String(txtv.value).toLowerCase()
+        
+        function validar(){
+            var txtv = document.getElementById('txtpais')
+            var res = document.getElementById('res')
+            var pais = String(txtv.value).toLowerCase()
+            res.innerHTML = `<p>Você nasceu no país ${pais.value}</p>`
+            if (pais.value == 'brasil', 'brazil', 'br'){
+                res.innerText += `<br><p>Você é Brasileiro. Bem vindo de volta!<p>`
+            }
+        }
+
+    </script>
+</body>
+</html>
